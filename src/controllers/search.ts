@@ -34,18 +34,4 @@ router.get('/', async (req, res) => {
     return res.status(200).send(advisories)
 })
 
-router.get('/:ghsa_id', async (req, res) => {
-    const logger = log4js.getLogger('SearchController')
-
-    const GHSA_ID = req.params.ghsa_id
-
-    const collection = mongoDb.collection('advisories')
-
-    const advisory = await collection.findOne({
-        id: GHSA_ID
-    })
-
-    return res.status(200).send(advisory)
-})
-
 export default router

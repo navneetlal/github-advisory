@@ -7,7 +7,8 @@ import { log4js } from './logger'
 
 import controllers from './controllers'
 import search from './controllers/search'
-import { MongoServerError } from 'mongodb'
+import updateAdvisories from './services/updateAdvisories'
+import './scheduler/updateAdvisoriesJob'
 
 const PORT = 3000
 const logger = log4js.getLogger()
@@ -31,5 +32,6 @@ app.listen(PORT, async () => {
     logger.info('MongoDb connection established')
     logger.info('Initializing database')
     await mongoDb.initialize()
+    await updateAdvisories()
     logger.info(`Starting app at http://localhost:${PORT}`)
 })

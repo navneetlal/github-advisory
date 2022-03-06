@@ -1,12 +1,11 @@
 import { Router } from 'express'
-import saveAdvisoriesJson from '../services/saveAdvisoriesJson'
+import updateAdvisories from '../services/updateAdvisories'
 
 const router = Router()
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
     const {  } = req.params
-    saveAdvisoriesJson('advisories/github-reviewed/**/*.json')
-        .subscribe()
+    await updateAdvisories()
     res.status(200).send('All is well!')
 })
 
