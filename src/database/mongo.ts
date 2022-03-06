@@ -5,7 +5,7 @@ import type { Collection, Document, MongoClientOptions } from 'mongodb'
 import type { Logger } from 'log4js'
 
 class Database {
-    private readonly _url: string = 'mongodb://localhost:27017/github_advisories'
+    private readonly _url: string = 'mongodb://192.168.0.106:27017/github_advisories'
     private readonly _options: MongoClientOptions
     private readonly _client: MongoClient
     private readonly _db_name: string | undefined = undefined

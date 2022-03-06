@@ -9,6 +9,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon",
+    "start:prod": "node server.js",
     "clean": "rimraf dist/",
     "prebuild": "yarn clean",
     "build": "tsc"
