@@ -1,0 +1,1 @@
+export { default as log4js } from './log4js'
